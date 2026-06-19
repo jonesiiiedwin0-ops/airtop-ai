@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airtop-ai-ollama"
+version = "0.1.0"
+description = "A 100% Python, dependency-free Ollama plugin for the Airtop AI platform."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Airtop AI" }]
+keywords = ["ollama", "llm", "ai", "plugin", "airtop"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# No runtime dependencies: the plugin is built entirely on the standard library.
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/jonesiiiedwin0-ops/airtop-ai"
+
+[project.scripts]
+ollama-plugin = "airtop_ai.plugins.ollama.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["airtop_ai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

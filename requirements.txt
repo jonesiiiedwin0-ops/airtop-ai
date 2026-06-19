@@ -1,0 +1,10 @@
+# The Ollama plugin is 100% Python and depends only on the standard library.
+# No third-party runtime dependencies are required.
+#
+# For development (running the test-suite) the standard library `unittest`
+# module is sufficient:
+#
+#     python -m unittest discover -s tests -v
+#
+# pytest is optional and can be used instead if preferred:
+# pytest
