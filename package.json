@@ -1,0 +1,45 @@
+{
+  "name": "winston-ai-official-server",
+  "version": "0.1.0",
+  "description": "Official Winston AI MCP server for roadmap planning, launch readiness, and operational execution.",
+  "type": "module",
+  "bin": {
+    "winston-ai": "./build/index.js"
+  },
+  "main": "./build/index.js",
+  "files": [
+    "build",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonesiiiedwin0-ops/airtop-ai.git"
+  },
+  "keywords": [
+    "winston-ai",
+    "mcp",
+    "model-context-protocol",
+    "ai-operations"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonesiiiedwin0-ops/airtop-ai/issues"
+  },
+  "homepage": "https://github.com/jonesiiiedwin0-ops/airtop-ai#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}

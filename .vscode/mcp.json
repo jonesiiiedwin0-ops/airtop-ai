@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "winston-ai": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./build/index.js"]
+    }
+  }
+}
