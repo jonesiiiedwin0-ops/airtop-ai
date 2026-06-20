@@ -1,0 +1,54 @@
+{
+  "name": "winston-ai-mcp-server",
+  "version": "1.0.0",
+  "description": "Official Winston AI MCP server for strategic planning, prioritization, and launch execution.",
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "bin": {
+    "winston-ai": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonesiiiedwin0-ops/airtop-ai.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "winston-ai",
+    "planning",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonesiiiedwin0-ops/airtop-ai/issues"
+  },
+  "homepage": "https://github.com/jonesiiiedwin0-ops/airtop-ai#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.0.0",
+    "eslint": "^10.5.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^4.1.9"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "winston-ai": {
+      "command": "node",
+      "args": ["/absolute/path/to/winston-ai-mcp-server/dist/cli.js"]
+    }
+  }
+}
