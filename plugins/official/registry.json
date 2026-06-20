@@ -1,0 +1,12 @@
+{
+  "registryVersion": 1,
+  "officialPlugins": [
+    {
+      "id": "winston-ai",
+      "name": "Winston AI",
+      "manifest": "plugins/official/winston-ai/plugin.json",
+      "entrypoint": "airtop_ai.plugins.winston_ai:WinstonAIPlugin",
+      "status": "official"
+    }
+  ]
+}

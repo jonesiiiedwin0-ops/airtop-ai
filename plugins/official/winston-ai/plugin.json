@@ -1,0 +1,29 @@
+{
+  "id": "winston-ai",
+  "name": "Winston AI",
+  "version": "0.1.0",
+  "status": "official",
+  "publisher": "Airtop AI",
+  "entrypoint": "airtop_ai.plugins.winston_ai:WinstonAIPlugin",
+  "description": "Official AI orchestration plugin for building governed execution outlines across Airtop AI's installed plugin ecosystem.",
+  "capabilities": [
+    "plugin-orchestration",
+    "execution-planning",
+    "automation-governance",
+    "ecosystem-reporting"
+  ],
+  "requirements": {
+    "python": ">=3.10",
+    "usesAllInstalledPlugins": true
+  },
+  "governance": {
+    "riskLevel": "medium",
+    "requiresHumanApprovalForSensitiveActions": true,
+    "auditEvents": [
+      "outline.created",
+      "plugin.used",
+      "automation.approved",
+      "automation.completed"
+    ]
+  }
+}
