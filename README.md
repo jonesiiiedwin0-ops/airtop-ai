@@ -12,9 +12,9 @@ and assistant endpoints.
 ### Quickstart
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install -e .
+python3 -m pip install -e .
 winston-ai --host 127.0.0.1 --port 8000
 ```
 
@@ -50,5 +50,5 @@ See `docs/year_one_outline.md` for the technical launch outline.
 ### Tests
 
 ```bash
-python -m unittest discover -s tests
+PYTHONPATH=src python3 -m unittest discover -s tests
 ```
