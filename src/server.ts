@@ -19,7 +19,7 @@ function asJsonText(value: unknown): string {
   return JSON.stringify(value, null, 2);
 }
 
-function contentWithJson(value: unknown) {
+function contentWithJson<T extends Record<string, unknown>>(value: T) {
   return {
     content: [
       {
@@ -184,12 +184,17 @@ export function createWinstonAiServer(): McpServer {
       description: 'Create an audience-specific execution brief for the Winston AI official server.',
       argsSchema: {
         audience: audienceSchema.default('engineering'),
-        quarter: z.number().int().min(1).max(4).optional()
+        quarter: z
+          .string()
+          .regex(/^[1-4]$/)
+          .optional()
+          .describe('Quarter to brief, encoded as 1, 2, 3, or 4.')
       }
     },
     ({ audience, quarter }) => {
-      const scope = quarter ? `quarter ${quarter}` : 'the full year';
-      const roadmap = quarter ? summarizeQuarter(quarter) : yearOneRoadmap;
+      const selectedQuarter = quarter ? Number.parseInt(quarter, 10) : undefined;
+      const scope = selectedQuarter ? `quarter ${selectedQuarter}` : 'the full year';
+      const roadmap = selectedQuarter ? summarizeQuarter(selectedQuarter) : yearOneRoadmap;
 
       return {
         messages: [

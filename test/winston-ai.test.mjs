@@ -70,7 +70,7 @@ test('Winston AI server exposes official MCP capabilities over stdio', async () 
 
     const prompt = await client.getPrompt({
       name: 'year-one-execution-brief',
-      arguments: { audience: 'engineering', quarter: 1 }
+      arguments: { audience: 'engineering', quarter: '1' }
     });
     assert.match(prompt.messages[0].content.text, /engineering execution brief/);
     assert.match(prompt.messages[0].content.text, /Official foundation/);
