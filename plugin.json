@@ -1,0 +1,32 @@
+{
+  "name": "Airtop Ai",
+  "slug": "airtop-ai",
+  "version": "0.1.0",
+  "description": "AI-powered automation plugin for running Airtop Ai tasks from a host application.",
+  "runtime": "python>=3.9",
+  "entrypoint": "airtop_ai_plugin:AirtopAiPlugin",
+  "capabilities": [
+    "ai-tasks",
+    "automation",
+    "data-processing"
+  ],
+  "configuration": [
+    {
+      "name": "AIRTOP_AI_API_KEY",
+      "required": true,
+      "description": "API key used to authenticate Airtop Ai requests."
+    },
+    {
+      "name": "AIRTOP_AI_BASE_URL",
+      "required": false,
+      "default": "https://api.airtop.ai",
+      "description": "Base URL for the Airtop Ai API."
+    },
+    {
+      "name": "AIRTOP_AI_TIMEOUT_SECONDS",
+      "required": false,
+      "default": 30,
+      "description": "HTTP request timeout in seconds."
+    }
+  ]
+}
