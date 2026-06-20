@@ -1,0 +1,17 @@
+{
+  "name": "airtop-ai",
+  "version": "0.1.0",
+  "description": "Cursor plugin for building Airtop AI browser automation integrations.",
+  "author": "jonesiiiedwin0-ops",
+  "license": "MIT",
+  "keywords": [
+    "airtop",
+    "ai",
+    "browser-automation",
+    "agents",
+    "web-automation"
+  ],
+  "rules": "rules",
+  "skills": "skills",
+  "agents": "agents"
+}

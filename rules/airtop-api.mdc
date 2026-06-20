@@ -1,0 +1,45 @@
+---
+description: Airtop AI API and SDK conventions for browser automation integrations.
+alwaysApply: true
+---
+
+# Airtop AI integration rules
+
+Apply these rules when building or modifying code that uses Airtop cloud browsers, page queries, page interactions, or authenticated browser sessions.
+
+## Credentials and configuration
+
+- Read `AIRTOP_API_KEY` from environment or the hosting platform's secret manager.
+- Never hardcode Airtop credentials, profile IDs, session IDs, or customer-specific login data.
+- Keep Airtop configuration close to the integration boundary: API key, base URL, session defaults, timeout settings, and profile IDs.
+- Surface missing credentials with a clear setup error instead of silently falling back to mocks.
+
+## Session lifecycle
+
+- Create sessions intentionally and close them when the workflow is complete.
+- Track session ID, window ID, profile ID, and live view URL separately; do not overload one field with multiple Airtop identifiers.
+- Use persistent browser profiles only for user-approved authenticated workflows.
+- For long-running tasks, record enough state to resume or safely clean up abandoned sessions.
+
+## Page navigation and interaction
+
+- Prefer Airtop's natural-language interaction APIs for resilient clicks, typing, hovering, and browser actions.
+- Execute interactions sequentially. Do not fire multiple page interactions concurrently against the same window.
+- Wait after actions that trigger navigation, reloads, animations, or dynamic content changes.
+- Keep browser windows at or below 1920x1080 when relying on AI interactions.
+- Use low-level Playwright, Puppeteer, or Selenium control only when the Airtop AI interaction API is not precise enough.
+
+## Page query and extraction
+
+- Use page query APIs for extracting page content, summarizing visible state, or asking whether a page is in the expected state.
+- Provide clear prompt context: current page purpose, desired output, limits, and stop conditions.
+- Include a JSON schema when downstream code expects structured data.
+- For pagination or infinite scroll, state the maximum pages, item count, or stop condition explicitly.
+- Validate structured AI output before persisting it or passing it to another system.
+
+## Reliability and safety
+
+- Treat Airtop browser automation as an external service call: handle timeouts, non-2xx responses, rate limits, and partial failures.
+- Log workflow step names and Airtop IDs needed for debugging, but never log secrets or sensitive page content.
+- Design authenticated flows with human-in-the-loop login where needed, especially for OAuth, 2FA, captcha, or customer-owned accounts.
+- Avoid destructive browser actions unless the user explicitly requested them and the code confirms the target state first.
