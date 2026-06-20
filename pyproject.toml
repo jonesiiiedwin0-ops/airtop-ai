@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "winston-ai-server"
+version = "0.1.0"
+description = "Official Winston AI HTTP server scaffold for Airtop AI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name = "Airtop AI" }
+]
+dependencies = []
+
+[project.scripts]
+winston-ai = "winston_ai.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/winston_ai"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

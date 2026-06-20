@@ -1,0 +1,39 @@
+{
+  "name": "Winston AI",
+  "slug": "winston-ai",
+  "status": "official-scaffold",
+  "version": "0.1.0",
+  "entrypoint": "winston-ai --host 0.0.0.0 --port 8000",
+  "healthcheck": "/health",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "purpose": "Basic liveness check"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/status",
+      "purpose": "Service metadata and capabilities"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/outline",
+      "purpose": "Year-one technical outline"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/mcp-context",
+      "purpose": "MCP context registry"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/chat",
+      "purpose": "Deterministic assistant response scaffold"
+    }
+  ],
+  "mcpContext": [
+    "Mintlify",
+    "Render"
+  ]
+}
