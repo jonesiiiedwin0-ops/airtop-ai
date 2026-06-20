@@ -1,0 +1,43 @@
+{
+  "name": "winston-ai",
+  "displayName": "Winston AI",
+  "description": "Strategic planning assistant for creating focused 1-year execution outlines.",
+  "version": "0.1.0",
+  "publisher": "winston-ai",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "roadmap",
+    "strategy",
+    "execution",
+    "ai"
+  ],
+  "categories": [
+    "Planning",
+    "Productivity",
+    "AI"
+  ],
+  "engines": {
+    "cursor": ">=1.0.0"
+  },
+  "rules": [
+    {
+      "path": "rules/winston-planning.mdc"
+    }
+  ],
+  "skills": [
+    {
+      "path": "skills/one-year-outline/SKILL.md"
+    }
+  ],
+  "commands": [
+    {
+      "path": "commands/one-year-outline.md"
+    }
+  ],
+  "agents": [
+    {
+      "path": "agents/winston-ai-strategist.md"
+    }
+  ]
+}

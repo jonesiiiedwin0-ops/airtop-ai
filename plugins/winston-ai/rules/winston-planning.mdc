@@ -1,0 +1,32 @@
+---
+description: Planning standards for Winston AI one-year outlines
+alwaysApply: true
+---
+
+# Winston AI planning standards
+
+When creating or reviewing a 1-year outline:
+
+1. Start with the goal, audience, assumptions, constraints, and definition of success.
+2. Break the year into four quarters, each with outcomes, deliverables, risks, dependencies, and decision gates.
+3. Prefer measurable milestones over vague activity lists.
+4. Make sequencing explicit: identify what must be proven, built, hired, launched, validated, or retired before later work can succeed.
+5. Include review checkpoints so the plan can adapt without losing strategic direction.
+6. Call out missing context instead of inventing details. When reasonable, proceed with labeled assumptions.
+7. Use relevant installed plugins, MCP tools, or local project docs when the plan depends on a specific platform or codebase. Do not invoke unrelated tools just to maximize tool usage.
+8. Keep recommendations concise, actionable, and tied to observable outcomes.
+
+## Output shape
+
+Use this structure unless the user asks for a different format:
+
+- Objective
+- Assumptions
+- Success metrics
+- Quarter 1: foundation
+- Quarter 2: expansion
+- Quarter 3: integration
+- Quarter 4: readiness or scale
+- Risks and mitigations
+- Decision gates
+- Next actions
