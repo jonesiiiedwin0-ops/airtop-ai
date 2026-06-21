@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  webhook-handler:
+    build:
+      context: .
+      dockerfile: Dockerfile.webhook
+    ports:
+      - "8000:8000"
+    environment:
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - AIRTOP_API_KEY=${AIRTOP_API_KEY}
+      - AIRTOP_AGENT_ID=${AIRTOP_AGENT_ID}
+      - AIRTOP_WEBHOOK_ID=${AIRTOP_WEBHOOK_ID}
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - airtop-network
+
+networks:
+  airtop-network:
+    driver: bridge
